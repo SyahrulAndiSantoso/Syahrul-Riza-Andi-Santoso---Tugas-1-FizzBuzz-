@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Pelatihan</title>
+    <style>
+        li {
+            float: left;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="margin-left: 31px;">Get a FizzBuzz Result!</h1>
+    <ul>
+        <li>Type a number:</li>
+        <li><input type="text" id="number"></li>
+        <li><button type="button" onclick="proses()">Click here!</button></li>
+    </ul>
+    <br>
+    <hr>
+    <p id="jawaban"></p>
+
+    <script>
+        var data = [];
+        var angka = 0;
+
+        function proses() {
+            const numbers = document.getElementById('number').value;
+            window.angka++;
+            if (numbers == 0 || numbers == null || numbers == ' ') {
+                window.data.push('Invalid Input');
+            } else if (window.angka == 1) {
+                window.data.push(numbers);
+            } else if (numbers % 3 == 0 && numbers % 5 != 0) {
+                window.data.push('Buzz!');
+            } else if (numbers % 5 == 0 && numbers % 3 != 0) {
+                window.data.push('Fizz!');
+            } else if (numbers % 3 == 0 && numbers % 5 == 0) {
+                window.data.push('FizzBuzz!');
+            }else{
+                window.data.push(numbers);
+            }
+            document.getElementById('jawaban').innerHTML = window.data.join('<br>');
+            console.log(numbers);
+        }
+    </script>
+
+
+</body>
+
+</html>
